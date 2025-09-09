@@ -1,0 +1,8 @@
+project: {name: "Telascura_P2_hi256_seedB", root: "telascura"}
+box: {Lbox_hMpc: 750.0, grid_pm_side: 256}
+time: {z_ini: 1000.0, z_fin: 0.0, nsteps: 600, save_z: [1000,100,10,5,2,1,0.5,0.2,0.1,0.0]}
+forces: {enable_gradK: true, enable_gravity: true, softening_hMpc: 0.2, dk_growth_model: "linear", dk_strength: 1.0}
+integration: {scheme: "leapfrog", adaptive_cfl: 0.30, max_step_scale: 0.05}
+random: {seed: 424243}
+io: {ics: "telascura/ics/ics_lores.npz", out_dir: "telascura/runs/hi256_seedB", logs_dir: "telascura/logs"}
+monitor: {write_every_steps: 10, fields: ["z","a","dk_rms","n_collapse","t_wall_s","step_time_s"]}

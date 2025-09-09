@@ -1,0 +1,19 @@
+# telascura/cfg/nodes2d_pilot.yaml
+run_name: nodes2d_pilot
+seed_main: 24681357
+box_size: 512          # cells per side (2D pilot)
+dx: 1.0
+cfl_safety: 0.5
+advect_safety: 0.5
+n_steps: 600
+save_every: 50
+force_model:
+  use_gradK: true
+init:
+  field_type: gaussian
+  k0: 0.05
+  amp: 1.0
+output:
+  out_dir: telascura/runs/nodes2d_pilot
+  metrics_dir: telascura/metrics/nodes2d
+  figs_dir: telascura/figs/nodes2d

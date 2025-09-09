@@ -1,0 +1,106 @@
+# ==== Telascura: punto 1 (HI: misura su griglia 512) ====
+# Grandezze con h implicito in h^-1 Mpc (spazi) e h/Mpc (k).
+
+# --------- CHIAVI PIATTE (compatibili con gen_ics_telascura.py) ---------
+box_size_hMpc: 750.0
+np_side: 512
+npart_side: 512
+z_ini: 1000.0
+z_fin: 0.0
+seed: 424242
+adaptive_cfl: 0.30
+force_model: gradK_plus_grav
+pk_file: telascura/cfg/pk_telascura.csv
+
+# --------- STRUTTURA ESTESA ---------
+project:
+  name: "Telascura_P1_hi"
+  root: "telascura"
+
+box:
+  Lbox_hMpc: 750.0
+  npart_side: 512
+  npart_total: 134217728
+  grid_pm_side: 512        # <-- differenza: griglia misura più fine
+
+time:
+  z_ini: 1000.0
+  z_fin: 0.0
+  nz_save: 10
+
+random:
+  seed: 424242
+
+integration:
+  scheme: "leapfrog"
+  adaptive_cfl: 0.30
+  max_step_scale: 0.05
+
+forces:
+  model: "gradK_plus_grav"
+  softening_hMpc: 0.2
+
+pk:
+  pivot_k_hMpc: 0.05
+  nK: 1.00
+  alphaK: 0.00
+  kmin_hMpc: 0.003
+  kmax_hMpc: 5.0
+  nk: 256
+  cutoff_k_hMpc: 1.5
+  cutoff_shape: "gaussian"
+
+norm:
+  R_hMpc: 5.0
+  window: "gaussian"
+  target_sigmaK: 1.0
+
+ics:
+  method: "fourier_gaussian_random"
+  pk_file: "telascura/cfg/pk_telascura.csv"
+  field_seed: 424242
+  particle_seed: 424243
+
+nulls:
+  - name: "lcdm_no_gradK"
+    op: "replace_spectrum"
+    target: "lcdm_like"
+  - name: "phase_scramble"
+    op: "scramble_phases"
+  - name: "rescale_amp_0p5"
+    op: "rescale_amplitude"
+    factor: 0.5
+  - name: "sign_flip"
+    op: "sign_flip"
+  - name: "rotate_box_90z"
+    op: "rotate_box"
+    axis: "z"
+    deg: 90
+
+metrics:
+  pk:
+    k_bins_hMpc: [0.02, 0.04, 0.06, 0.1, 0.2, 0.4, 0.7]
+  xi:
+    r_bins_hMpc: [2, 5, 10, 20, 40, 80, 120]
+  node_mass_function:
+    finder: "fof"
+    b: 0.20
+  filament_lengths:
+    skeleton: "scikit"
+    lmin_hMpc: 3.0
+  basin_persistence:
+    proxy: "pK"
+
+fdr:
+  q: 0.01
+go_no_go:
+  stability_tol_percent: 2.0
+
+io:
+  cfg_dir:   "telascura/cfg"
+  ics_dir:   "telascura/ics"
+  runs_dir:  "telascura/runs"
+  nulls_dir: "telascura/nulls"
+  metrics_dir: "telascura/metrics"
+  figs_dir:  "telascura/figs"
+  logs_dir:  "telascura/logs"

@@ -1,0 +1,42 @@
+# Telascura N-body run (hi256, seedA)
+project: {name: "Telascura_P2_hi256_seedA", root: "telascura"}
+
+# Box / griglia
+box:
+  Lbox_hMpc: 750.0
+  grid_pm_side: 256
+
+# Tempo / output
+time:
+  z_ini: 1000.0
+  z_fin: 0.0
+  nsteps: 600         # va bene 400–800; adattivo lo gestisce
+  save_z: [1000, 100, 10, 5, 2, 1, 0.5, 0.2, 0.1, 0.0]
+
+# Forze (gradK + gravità)
+forces:
+  enable_gradK: true
+  enable_gravity: true
+  softening_hMpc: 0.2
+  dk_growth_model: "linear"
+  dk_strength: 1.0
+
+# Integrazione
+integration:
+  scheme: "leapfrog"
+  adaptive_cfl: 0.30
+  max_step_scale: 0.05
+
+# Seme
+random: {seed: 424242}
+
+# IO
+io:
+  ics: "telascura/ics/ics_lores.npz"
+  out_dir: "telascura/runs/hi256_seedA"
+  logs_dir: "telascura/logs"
+
+# Monitor
+monitor:
+  write_every_steps: 10
+  fields: ["z", "a", "dk_rms", "n_collapse", "t_wall_s", "step_time_s"]
