@@ -1,0 +1,2 @@
+[INFO] L=750.0  Ngrid=512  pos=(16777216, 3)
+[WRITE] telascura\metrics\hi256_z000\pk_real.csv & telascura\metrics\hi256_z000\xi_real.csv

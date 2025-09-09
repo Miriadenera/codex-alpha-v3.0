@@ -1,0 +1,3 @@
+nodes2d pilot OK
+N=512 steps=600 k0=0.05
+monitor=telascura\runs\nodes2d_pilot\monitor_DK.csv
