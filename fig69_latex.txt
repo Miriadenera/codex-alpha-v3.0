@@ -1,0 +1,12 @@
+%% Fig. 69 auto-generated
+\begin{figure}[t]
+  \centering
+  \begin{minipage}[t]{0.60\textwidth}\centering
+    \includegraphics[width=\linewidth]{fig69_left_rose.pdf}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.36\textwidth}\centering
+    \includegraphics[width=\linewidth]{fig69_right_cos.pdf}
+  \end{minipage}
+  \caption{Rose plot di $\Delta\theta$ con Rayleigh $Z=21.00$ (95\% CI [21.00,21.00]); a destra: $\langle|\cos\Delta\theta|\rangle=0.626$ con banda null (95\%).}
+  \label{fig:fig69}
+\end{figure}

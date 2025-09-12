@@ -1,0 +1,14 @@
+% --- Fig. 67 (generated from Python) ---
+\begin{figure}[t]
+\centering
+\begin{minipage}{0.68\linewidth}
+  \centering
+  \includegraphics[width=\linewidth]{fig67_left_distance.pdf}
+\end{minipage}\hfill
+\begin{minipage}{0.28\linewidth}
+  \centering
+  \includegraphics[width=\linewidth]{fig67_right_enrichment.pdf}
+\end{minipage}
+\caption{Nearest-ridge distance $d$ for min-basin centroids versus selection-preserving null bands (left; ECDFs), and areal enrichment $R$ with 95\% bootstrap confidence intervals for each structural template (right).}
+\label{fig:arm_gmc_distance_enrichment}
+\end{figure}

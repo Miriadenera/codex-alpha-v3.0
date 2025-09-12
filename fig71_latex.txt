@@ -1,0 +1,8 @@
+% --- Fig. 71 (generated) ---
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.86\textwidth]{fig71_dipole.pdf}
+\caption{Flat–sky dipole map with best–fit axis and 68/95\% uncertainty cones; side panel:
+amplitude $A$ vs null band (block bootstrap / rotations).}
+\label{fig:lg_dipole}
+\end{figure}

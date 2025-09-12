@@ -1,0 +1,13 @@
+\begin{figure}[t]
+\centering
+\begin{subfigure}{0.68\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{fig70_left_wtheta.pdf}
+\end{subfigure}%
+\begin{subfigure}{0.30\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{fig70_right_align.pdf}
+\end{subfigure}
+\caption{Left: two-point cross-correlation $w(\theta)$ (Landy--Szalay) between min--basin centroids and filament templates, with null median and 95\% envelope (filament longitudes randomly rotated within the patch while preserving $S(l,b)$). Right: violin plot of $|\cos(\theta-\phi)|$ for the orientation of graph edges against the tangent to the nearest filament, compared to the pooled null.}
+\label{fig:wtheta_align}
+\end{figure}
