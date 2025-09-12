@@ -1,0 +1,24 @@
+% Auto-generated: QC mini-map from qc_minimap_centroids_pK.csv
+\pgfplotstableread[col sep=comma]{qc_minimap_centroids_pK.csv}\centroidsA
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      width=0.70\textwidth, height=0.42\textwidth,
+      xlabel={$l$ [deg]}, ylabel={$b$ [deg]},
+      grid=both, grid style={black!10},
+      enlargelimits=false,
+      colormap/hot,
+      colorbar, colorbar style={title={$p_{\mathrm K}$}},
+      point meta=explicit,
+    ]
+      \addplot[
+        only marks, mark=*, mark size=1.6pt,
+        scatter, scatter src=explicit,
+      ]
+      table[x=l_mean, y=b_mean, meta=pK]{\centroidsA};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{QC mini-map of node centroids colour-coded by topological persistence on the scalar field \(K\) (\(p_{\mathrm K}\)). The colourbar reports the unitless persistence used in Sec.~2.2; scales are independent from the \(p_{\mathrm G}\) panel. Axes are Galactic \((l,b)\) in degrees; markers are basin centroids (min/max/saddle).}
+  \label{fig:centroidsPersistenceK}
+\end{figure}

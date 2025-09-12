@@ -1,0 +1,17 @@
+% Auto-generated: bootstrap summary table
+\pgfplotstableread[col sep=comma]{qc_minimap_bootstrap_summary.csv}\bootsum
+\begin{table}[htbp]
+  \centering
+  \caption{Bootstrap summary: median $p_{\mathrm G}$, $p_{\mathrm K}$ and node density (95\% CI).}
+  \pgfplotstabletypeset[
+    col sep=comma,
+    columns={metric,value,ci_low,ci_high},
+    columns/metric/.style={string type, column name={Metric}},
+    columns/value/.style={column name={Value}, fixed, precision=3},
+    columns/ci_low/.style={column name={CI$_{\rm low}$}, fixed, precision=3},
+    columns/ci_high/.style={column name={CI$_{\rm high}$}, fixed, precision=3},
+    every head row/.style={before row=\toprule, after row=\midrule},
+    every last row/.style={after row=\bottomrule}
+  ]{\bootsum}
+  \label{tab:BootstrapSummary}
+\end{table}

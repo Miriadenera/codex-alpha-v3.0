@@ -1,0 +1,17 @@
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lcccccc}
+\toprule
+Metric & Definition & Effect (data--null) & 95\% CI & $z$ & $p$ & $p_{\mathrm{BH}}$ \\
+\midrule
+Galactic latitude ECDF (Δmed sin|b|) & $\Delta\mathrm{med}[\sin|b|]$ & -0.002 & [-0.006, 0.004] & -0.726 & 0.47 & 0.47 \\
+$\langle|\cos\Delta\theta|\rangle-0.5$ (nearby-gals) & $\langle|\cos\Delta\theta|\rangle-0.5$ & 0.126 & [0.058, 0.214] & 3.180 & 0.00 & 0.00 \\
+$\beta_1$ (|b|) & Logit $\beta_1$ (|b|) & 0.929 & [0.792, 1.077] & 12.739 & 0.00 & 0.00 \\
+$\beta_2$ ($\Sigma_\star$) & Logit $\beta_2$ ($\Sigma_\star$) & -0.142 & [-0.242, -0.043] & -2.783 & 0.01 & 0.01 \\
+$\beta_3$ ($S$) & Logit $\beta_3$ ($S$) & -0.583 & [-0.738, -0.439] & -7.622 & 2.49e-14 & 6.22e-14 \\
+\bottomrule
+\end{tabular}
+\caption{Quantitative summary of cross-correlation metrics used in Fig.~\ref{fig:null_spider}. Effect sizes are defined as the difference between the measured statistic and its null expectation (or 0 when appropriate). The 95\% intervals shown are the block--bootstrap or selection-preserving envelopes used in the corresponding figures. Reported $p$-values are two-sided normal approximations; $p_{\mathrm{BH}}$ indicates Benjamini--Hochberg FDR-adjusted values across the metrics listed.}
+\label{tab:quant_summary}
+\end{table}

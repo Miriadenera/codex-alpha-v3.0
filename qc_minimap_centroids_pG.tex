@@ -1,0 +1,24 @@
+% Auto-generated: QC mini-map from qc_minimap_centroids_pG.csv
+\pgfplotstableread[col sep=comma]{qc_minimap_centroids_pG.csv}\centroidsA
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      width=0.70\textwidth, height=0.42\textwidth,
+      xlabel={$l$ [deg]}, ylabel={$b$ [deg]},
+      grid=both, grid style={black!10},
+      enlargelimits=false,
+      colormap/viridis,
+      colorbar, colorbar style={title={$p_{\mathrm G}$}},
+      point meta=explicit,
+    ]
+      \addplot[
+        only marks, mark=*, mark size=1.6pt,
+        scatter, scatter src=explicit,
+      ]
+      table[x=l_mean, y=b_mean, meta=pG]{\centroidsA};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{QC mini-map of node centroids colour-coded by topological persistence on the gradient graph \(G\) (\(p_{\mathrm G}\)). Larger values indicate more robust critical points (deeper basins / higher peaks) with respect to the Morse–Smale decomposition. Axes are Galactic \((l,b)\) in degrees; markers are basin centroids and include all node types.}
+  \label{fig:centroidsPersistenceG}
+\end{figure}
